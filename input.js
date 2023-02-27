@@ -1,3 +1,4 @@
+const { MOVES, MESSAGES } = require("./constants");
 let connection;
 
 const setupInput = function (conn) {
@@ -14,19 +15,12 @@ const handleUserInput = function (key) {
   if (key === "\u0003") {
     process.exit();
   }
-  if (keys[key]) {
-    connection.write(keys[key]);
+  if (MOVES[key]) {
+    connection.write(MOVES[key]);
   }
-};
-
-const keys = {
-  w: "Move: up",
-  a: "Move: left",
-  s: "Move: down",
-  d: "Move: right",
-  z: "Say: Hi!",
-  x: "Say: You lose!",
-  c: "Say: Haha!",
+  if (MESSAGES[key]) {
+    connection.write(MESSAGES[key]);
+  }
 };
 
 module.exports = { setupInput };

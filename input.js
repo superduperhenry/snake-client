@@ -24,6 +24,9 @@ const keys = {
   a: "Move: left",
   s: "Move: down",
   d: "Move: right",
+  z: "Say: Hi!",
+  x: "Say: You lose!",
+  c: "Say: Haha!",
 };
 
 module.exports = { setupInput };
